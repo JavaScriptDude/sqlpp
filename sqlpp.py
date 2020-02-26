@@ -4,6 +4,7 @@
 # .: Sample :.
 # sqlpp <sql_file> [<sql_file2>[, ...]]
 # .: deploy on linux :.
+# % git clone https://github.com/JavaScriptDude/sqlpp.git && cd sqlpp
 # % echo "python3 ${PWD}/sqlpp.py \$@" > ${HOME}/.local/bin/sqlpp
 # % chmod u+x ${HOME}/.local/bin/sqlpp
 # .: Other :.
