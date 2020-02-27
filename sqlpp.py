@@ -30,10 +30,11 @@ for i, file in enumerate(args.file):
     file.close()
     sOut = sqlparse.format(sIn, reindent=True, keyword_case='upper')
     if args.verbose or n > 1: 
-        print("File {}:\n    {}\n{}SQL:\n{}\n".format(
-            i+1
+        print("File{0}:\n    {1}\n{2}\nFormatted SQL:\n{3}\n".format(
+             (' ' + str(i+1) if n > 1 else '')
             ,file.name
-            ,("Original SQL:\n{}\n".format(prepend(sIn, "    ")) if args.verbose else "")
+            ,("\nOriginal SQL:\n{}\n".format(prepend(sIn, "    ")) 
+                    if args.verbose else "")
             ,prepend(sOut, "    ")
         ))
     else:
