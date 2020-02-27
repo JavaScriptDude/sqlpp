@@ -19,6 +19,8 @@ import argparse, sqlparse, re
 
 parser = argparse.ArgumentParser(prog="sqlpp")
 parser.add_argument("--verbose", "-v", action='store_true')
+parser.add_argument("--comma_first", default=False, action='store_true')
+
 parser.add_argument("file", type=argparse.FileType("r"), nargs="+")
 
 args = parser.parse_args()
@@ -30,7 +32,7 @@ n=len(args.file)
 for i, file in enumerate(args.file):
     sIn = file.read().replace('\n', '')
     file.close()
-    sOut = sqlparse.format(sIn, reindent=True, keyword_case='upper')
+    sOut = sqlparse.format(sIn, reindent=True, keyword_case='upper', use_space_around_operators=True, comma_first=args.comma_first)
     if args.verbose or n > 1: 
         print("File{0}:\n    {1}\n{2}\nFormatted SQL:\n{3}\n".format(
              (' ' + str(i+1) if n > 1 else '')
