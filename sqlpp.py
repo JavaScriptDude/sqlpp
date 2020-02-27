@@ -5,8 +5,10 @@
 # sqlpp <sql_file> [<sql_file2>[, ...]]
 # .: deploy on linux :.
 # % git clone https://github.com/JavaScriptDude/sqlpp.git && cd sqlpp
+# % python3 -m pip install -r requirements.txt --user
 # % echo "python3 ${PWD}/sqlpp.py \$@" > ${HOME}/.local/bin/sqlpp
 # % chmod u+x ${HOME}/.local/bin/sqlpp
+# % sqlpp -h
 # .: Other :.
 # Author: Timothy C. Quinn
 # Home: https://github.com/JavaScriptDude/sqlpp
